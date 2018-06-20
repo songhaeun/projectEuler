@@ -16,12 +16,11 @@ public class P04 {
 			cp = p1 * p2;
 			Palin pal = new Palin(cp);
 			pal.divide();
+			pal.setFl(2);
 			if(pal.getFl() == 1) {
-				System.out.println(pal.getFl());
 				p2 -= 1;
 			}
 			else {
-				System.out.println(pal.getFl());
 				System.out.println(cp);
 				break;
 			}
@@ -32,7 +31,7 @@ public class P04 {
 class Palin{
 
 	private int cp;
-	private int fl = 1;
+	private int fl;
 	private int size;
 	
 	List<Integer> check = new ArrayList<Integer>();
@@ -45,13 +44,12 @@ class Palin{
 	}
 	
 	public void divide() {
-		while(cp > 10) {
+		while(cp > 9) {
 			check.add(cp % 10);
-			cp = cp / 10;
+			cp /= 10;
 		}
 		check.add(cp);
 		setSize(size);
-		System.out.println(check);
 	}
 	
 	public int getCp() {
@@ -62,19 +60,16 @@ class Palin{
 	}
 	// 대칭수면 0 아니면 1
 	public int getFl() {
-		setFl(fl);
 		return fl;
 	}
 	public void setFl(int fl) {
-		for(int l = 0; l < size; l++) {
+		for(int l = 0; l < size / 2; l++) {
 			if(check.get(l) != check.get(size -l -1)) {
-				System.out.println(l+" "+size+"ㅅㅂ");
+				this.fl = 1;
 				break;
 			}
 			else {
 				this.fl = 0;
-				System.out.println(l+" "+size+"ㅅㅂㄴ");
-				continue;
 			}
 				
 		}
@@ -88,3 +83,4 @@ class Palin{
 	}
 		
 }
+
