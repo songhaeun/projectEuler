@@ -3,37 +3,25 @@ package projectEuler;
 import java.util.ArrayList;
 import java.util.List;
 
-// 피보나치 수열에서 짝수이면서 400만 이하인 항들의 합
-// -> 1. 일단 피보나치 수열을 구하고
-// -> 거기서 짝수인 애들만 더한다
+// 2. 피보나치 수열에서 짝수는 3번 단위로 돌아옴 
+//-> 1 1 [2] 3 5 [8] 13 21 [34] 55 89 [144] ...
 public class P02 {
 
 	public static void main(String args[]) {
+	
+		int limit = 4000000;
+		int fsum = 0;
+		int f1 = 1;
+		int f2 = 1;
+		int f3 = f1 + f2;
 		
-		// 일단 400만까지 피보나치 수열을 구하는 코드
-		List<Integer> fibo = new ArrayList<Integer>();
-		fibo.add(1);
-		fibo.add(2);
-		
-		int p = 0;
-		int tp = 0;
-		
-		while(true) {
-			tp = fibo.get(p)+fibo.get(p+1);
-			if( tp > 4000000)
-				break;
-			else
-				fibo.add(tp);
-			p++;
+		while(f3 < limit) {
+			fsum += f3;
+			f1 = f2 + f3;
+			f2 = f3 + f1;
+			f3 = f1 + f2;
 		}
-		//System.out.println(fibo);
+		System.out.println(fsum);
 		
-		// 이제 리스트에서 짝수인 애들만 뽑아내서 합 구하기
-		int psum = 0;
-		for(Integer check : fibo) {
-			if(check % 2 == 0)
-				psum += check;
-		}
-		System.out.println(psum);
 	}
 }
