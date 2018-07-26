@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // 피보나치 수열에서 짝수이면서 400만 이하인 항들의 합
-// -> 일단 피보나치 수열을 구하고
+// -> 1. 일단 피보나치 수열을 구하고
 // -> 거기서 짝수인 애들만 더한다
 public class P02 {
 
