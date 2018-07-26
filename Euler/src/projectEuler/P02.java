@@ -4,30 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 // 3. 피보나치 수열에서 짝수 항만 뽑아서 관찰 
-// 	  List 이용해서 작성해 본 것
+// 	    답안에 나와있는 1번 코드(피보나치 가장 기본 코드) 이용해서 작성
 public class P02 {
 
 	public static void main(String args[]) {
 	
-		List<Integer> fibo = new ArrayList<Integer>();
-		fibo.add(2);
-		fibo.add(8);
+		int limit = 4000000;
+		int fsum = 2;
+		int f1 = 2;
+		int f2 = 8;
+		int tf = 0;
 		
-		int p = 0; 
-		int tp = 0;
-		int fsum = 0;
-		
-		while(true) {
-			tp = 4 * fibo.get(p+1) + fibo.get(p);
-			if(tp > 4000000)
-				break;
-			else
-				fibo.add(tp);
-			p++;
-		}
-		
-		for(Integer i : fibo) {
-			fsum += i;
+		while(f2 < 4000000) {
+			fsum += f2;
+			tf = 4 * f2 + f1;
+			f1 = f2;
+			f2 = tf;
 		}
 		System.out.println(fsum);
 	}
