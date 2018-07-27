@@ -17,8 +17,7 @@ public class P03 {
 
 	public static void main(String args[]) {
 		
-		//long  evilBigNum = 600851475143L;
-		int evilBigNum = 8;
+		long  evilBigNum = 600851475143L;
 		int fac = 2;
 		int lFac = 0;
 		
