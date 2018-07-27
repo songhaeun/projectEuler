@@ -12,7 +12,6 @@ import java.util.Scanner;
 // -> n을 k로 나누고 k를 완전히 쪼개버린 후에 다음 k로 이동하면
 // -> k는 소수가 되고 
 // -> 결과적으로 n은 1이됨
-
 public class P03 {
 
 	public static void main(String args[]) {
@@ -33,8 +32,7 @@ public class P03 {
 		}
 		System.out.println(lFac);	
 	}
-}
-		
+}	
 
 
 
