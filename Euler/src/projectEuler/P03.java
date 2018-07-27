@@ -12,11 +12,16 @@ import java.util.Scanner;
 // -> n을 k로 나누고 k를 완전히 쪼개버린 후에 다음 k로 이동하면
 // -> k는 소수가 되고 
 // -> 결과적으로 n은 1이됨
+
+// 기존 코드 2번에서 소인수 분해를 이용한 방법은
+// k를 완전히 소수로 만들어 버리지 않았기 때문에
+// 오류의 여지가 있음!
 public class P03 {
 
 	public static void main(String args[]) {
 		
-		long  evilBigNum = 600851475143L;
+		//long  evilBigNum = 600851475143L;
+		int evilBigNum = 8;
 		int fac = 2;
 		int lFac = 0;
 		
