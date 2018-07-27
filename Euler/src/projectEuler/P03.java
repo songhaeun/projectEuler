@@ -27,6 +27,9 @@ public class P03 {
 				while(evilBigNum % fac == 0) {
 					evilBigNum /= fac;
 				}
+				// 기존 코드의 2번에서 소인수 분해를 이용했을 때는 없었던 부분!
+				// 이 부분이 없으면 fac을 완전히 쪼개버리지 못해서 
+				// evilBigNum에 주어진 숫자가 무엇이냐에 따라 오류의 여지가있음!
 			}
 			fac++;
 		}
