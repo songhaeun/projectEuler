@@ -9,7 +9,7 @@ public class P03 {
 
 	public static void main(String args[]) {
 		
-		// 60085147513말고 수를 입력받아서 처리한다고 생각
+		// 60085147513말고 수를 입력받아서 처리한다고 생각!
 		// 수 입력받기
 		Scanner scan = new Scanner(System.in);
 		double su = scan.nextDouble();
